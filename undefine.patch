@@ -1,5 +1,17 @@
+diff --git a/virttest/libvirt_vm.py b/virttest/libvirt_vm.py
+index e17e30c..42e66da 100644
+--- a/virttest/libvirt_vm.py
++++ b/virttest/libvirt_vm.py
+@@ -277,6 +277,7 @@ class VM(virt_vm.BaseVM):
+ 
+             virsh.dumpxml(self.name, extra=extra,
+                           to_file=xml_file, uri=self.connect_uri)
++            utils.run("sed -i '/<nvram>.*<\/nvram>/d' %s" % xml_file)
+             return xml_file
+         except Exception, detail:
+             if os.path.exists(xml_file):
 diff --git a/virttest/libvirt_xml/vm_xml.py b/virttest/libvirt_xml/vm_xml.py
-index 1a77bc2..1c98042 100644
+index 1a77bc2..76f2c14 100644
 --- a/virttest/libvirt_xml/vm_xml.py
 +++ b/virttest/libvirt_xml/vm_xml.py
 @@ -528,6 +528,8 @@ class VMXML(VMXMLBase):
@@ -11,25 +23,16 @@ index 1a77bc2..1c98042 100644
          return vmxml
  
      @staticmethod
-@@ -551,7 +553,7 @@ class VMXML(VMXMLBase):
-         """
-         return librarian.get(type_name)
- 
--    def undefine(self, options=None):
-+    def undefine(self, options="--nvram"):
-         """Undefine this VM with libvirt retaining XML in instance"""
-         return self.virsh.remove_domain(self.vm_name, options)
- 
 diff --git a/virttest/virsh.py b/virttest/virsh.py
-index 70dc302..5cb5e83 100644
+index 70dc302..5c8a3f5 100644
 --- a/virttest/virsh.py
 +++ b/virttest/virsh.py
-@@ -1302,7 +1302,7 @@ def define(xml_path, **dargs):
-     return command(cmd, **dargs)
- 
- 
--def undefine(name, options=None, **dargs):
-+def undefine(name, options="--nvram", **dargs):
+@@ -1310,7 +1310,7 @@ def undefine(name, options=None, **dargs):
+     :param dargs: standardized virsh function API keywords
+     :return: CmdResult object
      """
-     Return cmd result of domain undefine (after shutdown/destroy).
+-    cmd = "undefine %s" % name
++    cmd = "undefine %s --nvram" % name
+     if options is not None:
+         cmd += " %s" % options
  

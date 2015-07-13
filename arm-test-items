@@ -68,7 +68,6 @@ virsh.update_device.normal_test.config_option.scsi_option
 virsh.vcpucount.positive_tests.running_test.live_active_option
 virsh.vcpuinfo.normal_test.name_option
 virsh.vcpupin.online.positive_test.live
-virsh.vncdisplay.normal_test.name_option
 
 virsh.nwfilter_define.positive_test.all_test.non_acl
 virsh.nwfilter_dumpxml.normal_test.non_acl
