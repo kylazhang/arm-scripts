@@ -1,5 +1,3 @@
-virsh.attach_detach_disk.attach_disk.normal_test.attach_disk_image_format.raw_format
-virsh.attach_detach_interface.normal_test.vm_running.default_network.domid
 virsh.autostart.positive_test.set_autostart
 virsh.blkdeviotune.positive_testing.set_blkdevio_parameter.running_guest.change_read_bytes_sec.options.config.inside_boundary
 virsh.blkdeviotune.positive_testing.get_blkdevio_parameter.running_guest.options.current
@@ -17,11 +15,9 @@ virsh.create.none
 virsh.define.number
 virsh.desc.positive_test.config_desc
 virsh.destroy.normal_test.acl_test.graceful
-virsh.detach_device.normal_test.host_vm_id.disk_test.block_type
 virsh.domblkerror.undefinded_error
 virsh.domblklist.normal_test.details_option
 virsh.domcontrol.normal_test.id_option
-virsh.domdisplay.have_passwd.no_options.positive_readonly.vnc.domain_uuid
 virsh.domfstrim.positive_tests.acl_test.full_fstrim_with_minimum
 virsh.domid.normal_test.name_option
 virsh.domif_setlink_getlink.positive_test.interface_mac.no_config.running_guest.domif_setlink.setlink_down
@@ -42,8 +38,6 @@ virsh.managedsave.functional_test.saved_file
 virsh.memtune
 virsh.migrate_compcache.set_compcache.positive_test.live_vm.max_size
 virsh.migrate_set_get_speed.normal_test.default
-virsh.qemu_agent_command.normal_test.guest_cmd_valid.no_arguments.guest_ping.guest_cpu_busy.async_option.valid_domid
-virsh.qemu_agent_command_fs
 virsh.qemu_monitor_command.normal_test.hmp_option.cpus_info.vm_running.valid_domname
 virsh.reboot.normal_test.id_option.no_mode
 virsh.reset.positive_test.non_acl.name_options
