@@ -15,7 +15,6 @@ virsh.create.none
 virsh.define.number
 virsh.desc.positive_test.config_desc
 virsh.destroy.normal_test.acl_test.graceful
-virsh.domblkerror.undefinded_error
 virsh.domblklist.normal_test.details_option
 virsh.domcontrol.normal_test.id_option
 virsh.domfstrim.positive_tests.acl_test.full_fstrim_with_minimum
@@ -26,7 +25,6 @@ virsh.domiftune.positive_testing.get_domif_parameter.running_guest.options.curre
 virsh.domjobabort.normal_test.id_option
 virsh.domjobinfo.normal_test.id_option
 virsh.domname.vm_state.vm_running.with_valid_option.uuid
-virsh.dompmsuspend.positive_test.non_acl.disk
 virsh.domuuid.normal_test.vm_paused.valid_domid
 virsh.domxml_from_native.expect_option
 virsh.domxml_to_native.expected_option
@@ -48,7 +46,6 @@ virsh.save_image_define.running
 virsh.save_image_edit.running
 virsh.schedinfo_qemu_posix.normal_test.set_cpu_param.set_cpu_shares.value_exceed.set_by_cmd.config.valid_domid
 virsh.schedinfo_qemu_posix.normal_test.show_schedinfo.valid_domname
-virsh.screenshot.normal_test.non_acl.screen_0.name_option
 virsh.sendkey.params_test.non_acl.linux_keycode
 virsh.setmaxmem.normal_test.config.running.same_mem.domname.dom_arg_size_arg
 virsh.setmem.valid_options.inactive.half_mem.domname.dom_arg_size_arg.cmd_flag_config
@@ -108,7 +105,6 @@ virsh.net_start.normal_test.non_acl.valid_netname
 virsh.net_update.add-first.ip-dhcp-range
 virsh.net_uuid.name_option
 
-virsh.nodedev_dumpxml.positve_test.acl_test.normal_test
 virsh.nodedev_list.valid_option.non_acl.long_cap_option
 
 virsh.find_storage_pool_sources.positive_test.non_acl.local_iscsi_source
